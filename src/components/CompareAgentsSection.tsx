@@ -1,5 +1,3 @@
-// src/components/CompareAgentsSection.tsx
-import React from "react";
 import "./CompareAgentsSection.css";
 
 const features = [

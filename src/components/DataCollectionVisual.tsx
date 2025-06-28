@@ -53,12 +53,7 @@ const cards = [
   }
 ];
 
-function isMobile() {
-  if (typeof window !== "undefined") {
-    return window.innerWidth <= 600;
-  }
-  return false;
-}
+
 
 export default function DataCollectionVisual() {
   const mobile = typeof window !== "undefined" && window.innerWidth <= 600;
