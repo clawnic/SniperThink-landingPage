@@ -1,0 +1,159 @@
+.diagonal-layout {
+  background: linear-gradient(135deg, #f8fafb 0%, #eaf5f1 100%);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.diagonal-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  align-items: center;
+}
+
+.content-side {
+  transform: skewY(-2deg);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.content-side > * {
+  transform: skewY(2deg);
+}
+
+.industry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.industry-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(26, 98, 98, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #1A6262;
+}
+
+.industry-icon {
+  font-size: 1.8rem;
+  background: #1A6262;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-side {
+  position: relative;
+  height: 500px;
+}
+
+.floating-card {
+  position: absolute;
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(26,98,98,0.1);
+  max-width: 250px;
+  transition: transform 0.3s;
+}
+
+.floating-card:hover {
+  transform: translateY(-10px) rotate(2deg);
+}
+
+.floating-card.healthcare {
+  top: 20%;
+  right: 10%;
+  transform: rotate(-5deg);
+}
+
+.floating-card.d2c {
+  bottom: 20%;
+  left: 10%;
+  transform: rotate(3deg);
+}
+
+.card-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .diagonal-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  .content-side {
+    padding: 1rem;
+  }
+  .visual-side {
+    height: 340px;
+    min-height: 220px;
+  }
+  .floating-card {
+    max-width: 180px;
+    padding: 1rem;
+    font-size: 0.97rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .diagonal-layout {
+    padding: 2rem 0;
+  }
+  .diagonal-container {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  .content-side {
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+  .industry-item {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+  .industry-icon {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    min-width: 32px;
+    height: 32px;
+  }
+  .visual-side {
+    height: 220px;
+    min-height: 120px;
+  }
+  .floating-card {
+    max-width: 120px;
+    padding: 0.5rem;
+    font-size: 0.93rem;
+    border-radius: 10px;
+  }
+  .floating-card.healthcare {
+    top: 10%;
+    right: 2%;
+  }
+  .floating-card.d2c {
+    bottom: 10%;
+    left: 2%;
+  }
+  .card-icon {
+    font-size: 1.2rem;
+  }
+}

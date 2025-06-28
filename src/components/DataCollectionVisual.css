@@ -1,0 +1,210 @@
+.datacollection-section {
+  margin: 0 auto 3rem;
+  max-width: 1100px;
+}
+
+.datacollection-intro {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.datacollection-intro h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1A6262;
+  margin-bottom: 0.6rem;
+}
+
+.datacollection-intro p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.datacollection-bg {
+  position: relative;
+  width: 100%;
+  min-height: 370px;
+  background: #181A1B;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  box-shadow: 0 4px 32px rgba(26,98,98,0.10);
+}
+
+.datacollection-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(26,98,98,0.13);
+  padding: 1.1rem 1.3rem 1.1rem 1.1rem;
+  min-width: 210px;
+  max-width: 270px;
+  min-height: 70px;
+  align-items: flex-start;
+  gap: 0.7rem;
+  border: 2px solid #1A6262;
+  z-index: 2;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+.datacollection-card:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: 0 8px 32px rgba(26,98,98,0.18);
+}
+
+.datacollection-card.central {
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  max-width: 380px;
+  min-height: 100px;
+  z-index: 5;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 8px 32px rgba(26,98,98,0.18);
+}
+
+.datacollection-label {
+  font-size: 0.98rem;
+  color: #1A6262;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.central-label {
+  font-size: 1.08rem;
+  margin-bottom: 0.3rem;
+}
+
+.datacollection-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.datacollection-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #91C499;
+  margin-right: 0.5rem;
+}
+
+.datacollection-title {
+  font-size: 1.07rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.1rem;
+}
+
+.datacollection-sub {
+  font-size: 0.96rem;
+  color: #91C499;
+  font-weight: 500;
+}
+
+.central-sub {
+  font-size: 1.02rem;
+}
+
+.datacollection-play {
+  margin-left: auto;
+  color: #1A6262;
+  font-size: 1.2rem;
+  background: #E1A940;
+  border-radius: 50%;
+  padding: 0.18em 0.45em;
+  margin-top: 0.3rem;
+  box-shadow: 0 2px 8px #91c49933;
+}
+
+@media (max-width: 900px) {
+  .datacollection-bg {
+    min-height: 520px;
+    padding: 2.5rem 0;
+  }
+  .datacollection-card,
+  .datacollection-card.central {
+    min-width: 160px;
+    max-width: 220px;
+    font-size: 0.95rem;
+    padding: 0.9rem 0.8rem 0.9rem 0.8rem;
+  }
+  .datacollection-card.central {
+    min-width: 240px;
+    max-width: 300px;
+    padding: 1.2rem 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .datacollection-bg {
+    min-height: unset;
+    padding: 0.7rem 0.1rem 1.2rem 0.1rem;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.7rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(26,98,98,0.10);
+    position: relative;
+  }
+  .datacollection-card,
+  .datacollection-card.central {
+    position: static !important;
+    min-width: 140px;
+    max-width: 70vw;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.4rem 0.5rem 0.4rem;
+    margin: 0.1rem 0.1rem;
+    box-shadow: 0 1px 6px rgba(26,98,98,0.10);
+    min-height: 60px;
+    max-height: 120px;
+    flex: 0 0 auto;
+    z-index: 1;
+  }
+  .datacollection-card.central {
+    min-width: 160px;
+    max-width: 80vw;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.9rem;
+    z-index: 2;
+  }
+  .datacollection-label, .central-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+  }
+  .datacollection-title {
+    font-size: 0.92rem;
+    margin-bottom: 0.05rem;
+  }
+  .datacollection-sub, .central-sub {
+    font-size: 0.8rem;
+  }
+  .datacollection-avatar {
+    width: 28px;
+    height: 28px;
+    margin-right: 0.3rem;
+  }
+  .datacollection-play {
+    font-size: 1rem;
+    margin-top: 0.1rem;
+    padding: 0.12em 0.3em;
+  }
+  .datacollection-row {
+    gap: 0.5rem;
+  }
+  .datacollection-intro h2 {
+    font-size: 1.1rem;
+  }
+  .datacollection-intro p {
+    font-size: 0.85rem;
+    margin-bottom: 0.7rem;
+  }
+}

@@ -1,0 +1,145 @@
+.whatai-section.isometric-layout {
+  padding: 4rem 2rem 3rem 2rem;
+  background: linear-gradient(135deg, #f8fafb 0%, #eaf5f1 100%);
+  text-align: center;
+  perspective: 1000px;
+}
+
+.isometric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  transform-style: preserve-3d;
+}
+
+.isometric-card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  transform: rotateX(15deg) rotateY(-15deg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  animation: isoFloat 4s ease-in-out infinite;
+  animation-delay: calc(var(--card-index) * 0.3s);
+}
+
+@keyframes isoFloat {
+  0%, 100% { transform: rotateX(15deg) rotateY(-15deg) translateZ(0px); }
+  50% { transform: rotateX(15deg) rotateY(-15deg) translateZ(20px); }
+}
+
+.isometric-card:hover,
+.isometric-card.active {
+  transform: rotateX(25deg) rotateY(-25deg) translateZ(50px) scale(1.1);
+  animation-play-state: paused;
+}
+
+.card-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.card-front {
+  background: var(--card-gradient);
+  transform: translateZ(30px);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(26,98,98,0.2);
+}
+
+.card-top {
+  background: linear-gradient(90deg, 
+    color-mix(in srgb, var(--card-gradient) 70%, #fff), 
+    color-mix(in srgb, var(--card-gradient) 50%, #fff)
+  );
+  transform: rotateX(90deg) translateZ(100px);
+  transform-origin: top center;
+}
+
+.card-right {
+  background: linear-gradient(180deg, 
+    color-mix(in srgb, var(--card-gradient) 50%, #000), 
+    color-mix(in srgb, var(--card-gradient) 30%, #000)
+  );
+  transform: rotateY(90deg) translateZ(100px);
+  transform-origin: center right;
+}
+
+.isometric-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.isometric-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.isometric-desc {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .isometric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+  .isometric-card {
+    width: 150px;
+    height: 150px;
+  }
+  .card-face {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .whatai-section.isometric-layout {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .isometric-grid {
+    gap: 1.5rem 0.5rem; /* Uniform vertical margin between cards */
+  }
+  .isometric-card {
+    width: 110px;
+    height: 110px;
+  }
+  .card-face {
+    width: 110px;
+    height: 110px;
+  }
+  .card-front {
+    padding: 0.7rem 0.3rem 0.6rem 0.3rem;
+    /* Reduce padding for more space */
+  }
+  .isometric-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    margin-top: 0.1rem;
+    /* Add margin-top to prevent clipping */
+  }
+  .isometric-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+  .isometric-desc {
+    display: none;
+  }
+}

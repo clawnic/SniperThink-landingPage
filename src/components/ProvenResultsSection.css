@@ -1,0 +1,79 @@
+/* src/components/ProvenResultsSection.css */
+.proven-section {
+  background: #1A6262;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.proven-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.proven-subheading {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.proven-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.proven-card {
+  min-width: 160px;
+  flex: 1 1 180px;
+}
+
+.proven-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.proven-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .proven-section {
+    padding: 0.4rem 0.1rem 0.4rem 0.1rem;
+    border-radius: 10px;
+    margin: 0.7rem 0.1rem 0.7rem 0.1rem;
+  }
+  .proven-heading {
+    font-size: 0.95rem;
+    margin-bottom: 0.08rem;
+  }
+  .proven-subheading {
+    font-size: 0.7rem;
+    margin-bottom: 0.25rem;
+  }
+  .proven-stats {
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .proven-card {
+    min-width: 60px;
+    flex: 0 1 70px;
+    padding: 0.2rem 0.1rem 0.15rem 0.1rem;
+    margin: 0 0.05rem;
+  }
+  .proven-value {
+    font-size: 0.85rem;
+    margin-bottom: 0.03rem;
+  }
+  .proven-label {
+    font-size: 0.55rem;
+  }
+}

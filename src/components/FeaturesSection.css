@@ -1,0 +1,241 @@
+.whychoose-section {
+  padding: 4rem 2rem 3rem 2rem;
+  background: #f8fafb;
+  text-align: center;
+}
+
+.whychoose-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.1rem;
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, #1A6262 60%, #91C499 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.whychoose-subtitle {
+  font-size: 1.18rem;
+  color: #4a4a4a;
+  margin-bottom: 2.5rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid of features (first row) */
+.whychoose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  justify-items: center;
+}
+
+.whychoose-grid-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(26,98,98,0.07);
+  padding: 1.4rem 1.7rem;
+  min-width: 265px;
+  max-width: 340px;
+  text-align: left;
+}
+
+.whychoose-grid-icon {
+  font-size: 1.5rem;
+  color: #1A6262;
+  margin-top: 0.2rem;
+}
+
+.whychoose-grid-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.2rem;
+}
+
+.whychoose-grid-subtitle {
+  font-size: 0.98rem;
+  color: #555;
+}
+
+/* Cue Card Flip Styles (second row) */
+.whychoose-tabs {
+  display: flex;
+  gap: 2.2rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cue-card {
+  background: transparent;
+  width: 220px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+
+.cue-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.4,2,.6,1);
+  transform-style: preserve-3d;
+}
+
+.cue-card.flipped .cue-card-inner {
+  transform: rotateY(180deg);
+}
+
+.cue-card-front,
+.cue-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(26,98,98,0.07);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: box-shadow 0.2s, background 0.2s;
+  border: 2px solid transparent;
+}
+
+.cue-card-front {
+  z-index: 2;
+}
+
+.cue-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(90deg, #eaf5f1 60%, #f8fafb 100%);
+  border: 2px solid #91C499;
+}
+
+.cue-card.flipped .cue-card-front {
+  box-shadow: 0 8px 32px rgba(26,98,98,0.13);
+  border: 2px solid #91C499;
+}
+
+.cue-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(90deg, #1A6262 60%, #91C499 100%);
+  color: #fff;
+}
+
+.cue-card-heading {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.8rem;
+}
+
+.cue-card-subheading {
+  font-size: 1.01rem;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.cue-card-cta {
+  margin-top: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(90deg, #1A6262 60%, #91C499 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 10px rgba(26,98,98,0.07);
+}
+
+.cue-card-cta:hover {
+  background: linear-gradient(90deg, #E1A940 60%, #FF6700 100%);
+  color: #222;
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .whychoose-section {
+    padding: 2rem 1rem 2rem 1rem;
+  }
+  .whychoose-title {
+    font-size: 1.5rem;
+  }
+  .whychoose-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .whychoose-section {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+  .whychoose-title {
+    font-size: 1.1rem;
+  }
+  .whychoose-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .whychoose-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.7rem;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .whychoose-grid-card {
+    min-width: 220px;
+    max-width: 80vw;
+    padding: 0.8rem 0.7rem;
+    border-radius: 14px;
+    font-size: 0.97rem;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+  .whychoose-grid-icon {
+    font-size: 1.2rem;
+  }
+  .whychoose-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.2rem;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+  .cue-card {
+    min-width: 180px;
+    width: 180px;
+    height: 180px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    flex: 0 0 auto;
+  }
+}

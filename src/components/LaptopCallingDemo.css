@@ -1,0 +1,209 @@
+.laptopcall-window {
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+  width: 100%;
+  background: #f8fafb;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+.laptopcall-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-height: 230px;
+  min-height: 150px;
+}
+
+.laptopcall-bubble {
+  max-width: 75%;
+  padding: 0.9rem 1.2rem 0.8rem 1.2rem;
+  border-radius: 18px 18px 18px 4px;
+  font-size: 1.07rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 12px rgba(26,98,98,0.08);
+  position: relative;
+  word-break: break-word;
+  background: #fff;
+  color: var(--color-primary);
+  align-self: flex-start;
+  border: 1px solid #e0e7e5;
+}
+
+.laptopcall-bubble.user {
+  background: linear-gradient(135deg, #1A6262 60%, #91C499 100%);
+  color: #fff;
+  align-self: flex-end;
+  border-radius: 18px 18px 4px 18px;
+  border: none;
+}
+
+.laptopcall-time {
+  font-size: 0.85rem;
+  color: #a2b1af;
+  text-align: right;
+}
+
+.laptopcall-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0.7rem 0.7rem 0 0.7rem;
+}
+
+.start-call-btn {
+  flex: 1;
+  background: linear-gradient(90deg, #e1a940 0%, #ff6700 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.start-call-btn:hover {
+  background: linear-gradient(90deg, #ff6700 0%, #e1a940 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.hold-btn {
+  flex: 2;
+  background: #91c499;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.hold-btn:hover {
+  background: #1a6262;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.mic-btn {
+  background: #fff;
+  color: #1a6262;
+  border: 2px solid #91c499;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, border 0.18s, color 0.18s, transform 0.18s;
+}
+
+.mic-btn:hover {
+  background: #91c499;
+  color: #fff;
+  border: 2px solid #1a6262;
+  transform: translateY(-2px) scale(1.08);
+}
+
+.end-call-btn {
+  flex: 1;
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 0.7rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.18s;
+}
+
+.end-call-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.laptopcall-input-row {
+  display: flex;
+  align-items: center;
+  padding: 0 0.7rem 0.7rem 0.7rem;
+  background: #f8fafb;
+}
+
+.laptopcall-input {
+  flex: 1;
+  padding: 0.7rem 1.1rem;
+  border-radius: 12px;
+  border: 1.5px solid #e0e7e5;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: #1a6262;
+  transition: border 0.18s;
+}
+
+.laptopcall-input:focus {
+  border: 1.5px solid #1a6262;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .laptopcall-window {
+    height: auto;
+    min-width: 0;
+    width: 100%;
+    padding: 0.5rem 0.1rem 1rem 0.1rem;
+  }
+  .laptopcall-messages {
+    max-height: 160px;
+    min-height: 80px;
+    padding: 0 0.2rem 0.3rem 0.2rem;
+    gap: 0.4rem;
+  }
+  .laptopcall-bubble {
+    max-width: 95%;
+    font-size: 0.97rem;
+    padding: 0.7rem 0.7rem 0.6rem 0.7rem;
+  }
+  .laptopcall-controls {
+    gap: 0.5rem;
+    padding: 0.5rem 0.2rem 0 0.2rem;
+  }
+  .start-call-btn,
+  .hold-btn,
+  .end-call-btn {
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+    border-radius: 8px;
+  }
+  .mic-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .laptopcall-input-row {
+    padding: 0 0.2rem 0.5rem 0.2rem;
+  }
+  .laptopcall-input {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+  }
+}
